@@ -55,11 +55,7 @@ window.setTimeout(function() {
                     }
                 }
 
-                console.log(candidate);
-                console.log(display);
-
                 var SearchedInfo = document.querySelector("#AdviceCard");;
-                var AdviceModal = document.querySelector("#AdviceModal");
                 SearchedInfo.innerHTML = ``;
                 // show info of students in display
                 for(let i = 0; i < 3; i++){
@@ -75,14 +71,13 @@ window.setTimeout(function() {
                                         <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
                                         <p>意願薪資：`+doc.data().Salary+`</p><br>
                                         <p>備註：`+doc.data().StatusInfo+`</p><br>
-                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">送出邀請</button>
+                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">馬上送出試教邀請</button>
                                         </div>
                                 </div>
                             </div>
                             ` + SearchedInfo.innerHTML;
                         })
                     } else {
-                        SearchedInfo = document.querySelector("." + cardClass);
                         SearchedInfo.innerHTML += `
                         <div class = "col-sm-12 col-md-4">
                             <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
@@ -103,7 +98,6 @@ window.setTimeout(function() {
         }
         else{
             SearchRef = db.collection("TeacherResume");
-
             candidate = [];
             SearchRef.where("Location", "==", location).where("Target", 'in', Age).get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
@@ -124,7 +118,7 @@ window.setTimeout(function() {
                     for(let i = 0; i < 3; i++){
                         let num;
                         do{
-                            num = Math.floor(Math.random() * candidate);
+                            num = Math.floor(Math.random() * candidate.length);
                         }while(display.includes(num));
                         display.push(num);
                     }
@@ -135,69 +129,56 @@ window.setTimeout(function() {
                     }
                 }
 
-                console.log(candidate);
-                console.log(display);
-
-                var SearchedInfo;
-
-                // show info of teachers in display
-                for(let i = 0; i < display.length; i++){
-                    SearchRef.doc(display[i]).get().then(doc => {
-                        var cardClass;
-                        if(i == 0){
-                            cardClass = "card-1";
-                        }
-                        else if(i == 1){
-                            cardClass = "card-2";
-                        }
-                        else{
-                            cardClass = "card-3";
-                        }
-    
-                        SearchedInfo = document.querySelector("." + cardClass);
-                        SearchedInfo.innerHTML = `
-                        <h3 class="card-title">` + doc.data().LastName + ` 老師</h3>
-                            <p>科目：` + doc.data().SubjectsString + `</p><br>
-                            <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
-                            <p>年紀：` + doc.data().Status + `</p><br>
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button>
-                        `;
-                        SearchedInfo.innerHTML += `
-                        <div id="modal` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content" style="color:black;">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title" id="exampleModalLongTitle">專屬推薦</h2>
-                                    </div>
-                                    <div class="modal-body" id="CaseDetail">
-                                        <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">`+doc.data().LastName+` 同學</h4>
-                                        <p>科目：`+doc.data().SubjectsString+`</p><br>
-                                        <p>年紀：`+doc.data().Status+`</p><br>
-                                        <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
+                var SearchedInfo = document.querySelector("#AdviceCard");;
+                SearchedInfo.innerHTML = ``;
+                // show info of students in display
+                for(let i = 0; i < 3; i++){
+                    if (display[i]) {
+                        SearchRef.doc(candidate[display[i]]).get().then(doc => {
+                            SearchedInfo.innerHTML = `
+                            <div class = "col-sm-12 col-md-4">
+                                <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
+                                    <div class="card-body">
+                                        <h3 class="card-title">` + doc.data().LastName + ` 老師</h3>
+                                        <p>所教科目：`+doc.data().SubjectsString+`</p><br>
+                                        <p>學籍/身分：`+doc.data().Status+`</p><br>
+                                        <p>授課地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
                                         <p>意願薪資：`+doc.data().Salary+`</p><br>
-                                        <p>備註：`+doc.data().StatusInfo+`</p><br>
-                                        <p id = "CaseID" style = "display: none;">`+doc.id+`</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">傳送邀請</button>
-                                    </div>
+                                        <p>自我介紹：`+doc.data().Biography+`</p><br>
+                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">馬上送出試教邀請</button>
+                                        </div>
+                                </div>
+                            </div>
+                            ` + SearchedInfo.innerHTML;
+                        })
+                    } else {
+                        SearchedInfo.innerHTML += `
+                        <div class = "col-sm-12 col-md-4">
+                            <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
+                                <div class="card-body card-1">
+                                    <h3 class="card-title"></h3>
+                                    <p></p><br>
+                                    <p></p><br>
+                                    <p>請再稍後片刻，符合您的專屬配對即將登場！</p><br>
+                                    <p></p><br>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
                         `;
-                    })
+                    }
                 }
             })
         }
     })
-}, 2000);
+}, 1000);
 
 function sendReq(selectElm){
     var user = firebase.auth().currentUser;
     db.collection('users').doc(user.uid).get().then(doc => {
         var CaseID = selectElm.getAttribute('id');
         var Selected = doc.data().Selected; 
+        var character = doc.data().character;
         if (Selected.length == 3) 
             alert("您已經發了三個試教邀請，請等待回復。若三天內沒收到回復，系統將自動刪除邀請。")
         else { 
