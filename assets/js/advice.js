@@ -28,7 +28,7 @@ window.setTimeout(function() {
             SearchRef.where("Location", "==", location).where("Target", 'in', Age).get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                     var x = false;
-                    for(let i = 0; i < subject.length; i++){
+                    for(let i = 0; i < subject.length; i++){    
                         if(doc.data().Subjects[i] && subject[i]){
                             x = true;
                         }
@@ -39,21 +39,21 @@ window.setTimeout(function() {
                 })
 
                 //randomly choose three students form candidate
-                display = []
-                if(candidate.length > 3){
-                    for(let i = 0; i < 3; i++){
-                        let num;
-                        do{
-                            num = Math.floor(Math.random() * candidate);
-                        }while(display.includes(num));
-                        display.push(num);
-                    }
-                }
-                else{
-                    for(let i = 0; i < candidate.length; i++){
-                        display.push(candidate[i]);
-                    }
-                }
+                // display = [];
+                // if(candidate.length > 3){
+                //     for(let i = 0; i < 3; i++){
+                //         let num;
+                //         do{
+                //             num = Math.floor(Math.random() * candidate);
+                //         }while(display.includes(num));
+                //         display.push(num);
+                //     }
+                // }
+                // else{
+                //     for(let i = 0; i < candidate.length; i++){
+                //         display.push(candidate[i]);
+                //     }
+                // }
 
                 console.log(candidate);
                 console.log(display);
@@ -61,8 +61,8 @@ window.setTimeout(function() {
                 var SearchedInfo;
 
                 // show info of students in display
-                for(let i = 0; i < display.length; i++){
-                    SearchRef.doc(display[i]).get().then(doc => {
+                for(let i = 0; i < candidate.length; i++){
+                    SearchRef.doc(candidate[i]).get().then(doc => {
                         var cardClass;
                         if(i == 0){
                             cardClass = "card-1";
