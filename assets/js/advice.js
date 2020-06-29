@@ -60,50 +60,27 @@ window.setTimeout(function() {
 
                 var SearchedInfo = document.querySelector("#AdviceCard");;
                 var AdviceModal = document.querySelector("#AdviceModal");
-
+                SearchedInfo.innerHTML = ``;
                 // show info of students in display
                 for(let i = 0; i < 3; i++){
-                    if (display.length > 0) {
+                    if (display[i]) {
                         SearchRef.doc(candidate[display[i]]).get().then(doc => {
                             SearchedInfo.innerHTML = `
                             <div class = "col-sm-12 col-md-4">
                                 <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
                                     <div class="card-body">
                                         <h3 class="card-title">` + doc.data().LastName + ` 同學</h3>
-                                        <p>科目：` + doc.data().SubjectsString + `</p><br>
+                                        <p>科目：`+doc.data().SubjectsString+`</p><br>
+                                        <p>年紀：`+doc.data().Status+`</p><br>
                                         <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
-                                        <p>年紀：` + doc.data().Status + `</p><br>
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#S` + doc.id + `">查看更多</button>
-                                    </div>
+                                        <p>意願薪資：`+doc.data().Salary+`</p><br>
+                                        <p>備註：`+doc.data().StatusInfo+`</p><br>
+                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">送出邀請</button>
+                                        </div>
                                 </div>
                             </div>
                             ` + SearchedInfo.innerHTML;
-                            AdviceModal.innerHTML += `
-                            <div class="modal fade" id="S` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title" id="exampleModalLongTitle">案件詳情</h2>
-                                        </div>
-                                        <div class="modal-body" id="CaseDetail">
-                                            <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">`+doc.data().LastName+` 同學</h4>
-                                            <p>科目：`+doc.data().SubjectsString+`</p><br>
-                                            <p>年紀：`+doc.data().Status+`</p><br>
-                                            <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
-                                            <p>意願薪資：`+doc.data().Salary+`</p><br>
-                                            <p>備註：`+doc.data().StatusInfo+`</p><br>
-                                            <p id = "CaseID" style = "display: none;">`+doc.id+`</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                            <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">移除邀請</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            `;
                         })
-                        display.pop();
                     } else {
                         SearchedInfo = document.querySelector("." + cardClass);
                         SearchedInfo.innerHTML += `
