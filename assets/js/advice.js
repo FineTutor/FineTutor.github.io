@@ -15,10 +15,14 @@ window.setTimeout(function() {
         const subject = doc.data().Subjects;
 
         var Age = [];
-        for(let i = 0; i < age.length; i++){
-            if(age[i]){
-                Age.push(i);
+        if (character == "teacher") {
+            for(let i = 0; i < age.length; i++){
+                if(age[i]){
+                    Age.push(i);
+                }
             }
+        } else {
+            Age = age;
         }
         console.log("Get User");
         if(character == 'teacher'){
@@ -99,7 +103,7 @@ window.setTimeout(function() {
         else{
             SearchRef = db.collection("TeacherResume");
             candidate = [];
-            SearchRef.where("Location", "==", location).where("Target", 'in', Age).get().then(function(querySnapshot) {
+            SearchRef.where("Location", "==", location).get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                     var x = false;
                     for(let i = 0; i < subject.length; i++){
@@ -107,6 +111,7 @@ window.setTimeout(function() {
                             x = true;
                         }
                     }
+                    if (!doc.data().Target[Age]) x = false;
                     if(x){
                         candidate.push(doc.id);
                     }
