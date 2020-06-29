@@ -85,7 +85,7 @@ window.setTimeout(function() {
                                     <h3 class="card-title"></h3>
                                     <p></p><br>
                                     <p></p><br>
-                                    <p>請再稍後片刻，符合您的專屬配對即將登場！</p><br>
+                                    <p>放寬限制，會有更多試教配對哦</p><br>
                                     <p></p><br>
                                     <p></p>
                                 </div>
@@ -159,7 +159,7 @@ window.setTimeout(function() {
                                     <h3 class="card-title"></h3>
                                     <p></p><br>
                                     <p></p><br>
-                                    <p>請再稍後片刻，符合您的專屬配對即將登場！</p><br>
+                                    <p>放寬限制，會有更多試教配對哦</p><br>
                                     <p></p><br>
                                     <p></p>
                                 </div>
@@ -171,7 +171,7 @@ window.setTimeout(function() {
             })
         }
     })
-}, 1000);
+}, 1500);
 
 function sendReq(selectElm){
     var user = firebase.auth().currentUser;
