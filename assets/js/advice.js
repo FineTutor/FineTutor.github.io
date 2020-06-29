@@ -58,14 +58,13 @@ window.setTimeout(function() {
                 console.log(candidate);
                 console.log(display);
 
-                var SearchedInfo;
+                var SearchedInfo = document.querySelector("#AdviceCard");;
                 var AdviceModal = document.querySelector("#AdviceModal");
 
                 // show info of students in display
                 for(let i = 0; i < 3; i++){
                     if (display.length > 0) {
                         SearchRef.doc(candidate[display[i]]).get().then(doc => {
-                            SearchedInfo = document.querySelector("." + cardClass);
                             SearchedInfo.innerHTML = `
                             <div class = "col-sm-12 col-md-4">
                                 <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
