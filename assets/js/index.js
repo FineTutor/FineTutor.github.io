@@ -30,7 +30,7 @@ const setupUI = (user) => {
         <h4 style="text-align: center; color: white;"> 
           您收到了 <span style = "display: inline; color: crimson; font-size: 1.5em;">${doc.data().BeingSelected.length} </span>則試教邀請！<br>
           有 <span style = "display: inline; color: crimson; font-size: 1.5em;">${doc.data().Success.length} </span>則案件待試教，<br>
-          尚有 <span style = "display: inline; color: crimson; font-size: 1.5em;">${doc.data().Success.length} </span>則案件待${(doc.data().character == 'teacher') ? '老師' : '學生'}接受。<br>
+          尚有 <span style = "display: inline; color: crimson; font-size: 1.5em;">${doc.data().Selected.length} </span>則案件待${(doc.data().character == 'teacher') ? '老師' : '學生'}接受。<br>
         </h4>
       `;
       titleDetails.innerHTML = html2;
