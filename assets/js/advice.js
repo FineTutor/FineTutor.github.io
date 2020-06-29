@@ -62,7 +62,7 @@ window.setTimeout(function() {
                 var AdviceModal = document.querySelector("#AdviceModal");
 
                 // show info of students in display
-                for(let i = 0; i < candidate.length; i++){
+                for(let i = 0; i < 3; i++){
                     SearchRef.doc(candidate[i]).get().then(doc => {
                         var cardClass;
                         if(i == 0){
