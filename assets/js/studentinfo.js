@@ -6,7 +6,7 @@ window.setTimeout(function() {
   db.collection('users').doc(user.uid).get().then(doc => {
     var html = ``;
     var text = (doc.data().character == 'teacher') ? '老師履歷' : '學生資料';
-    html += `<h1 >`+ text +`</h1>`;
+    html += `<h1 style="text-align: center;">`+ text +`</h1>`;
     if(!doc.data().FirstName) {
       html += `<h1 style="text-align: center;">請先填寫學生資料</h1>`;
     } else {
