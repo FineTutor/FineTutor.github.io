@@ -10,7 +10,7 @@ window.setTimeout(function() {
     if(!doc.data().FirstName) {
       html += `<h1 style="text-align: center;">請先填寫履歷</h1>`;
     } else {
-      html +=  `<h3>姓名：`+doc.data().LastName+ ` ` + doc.data().FirstName +`</h3>`;
+      html +=  `<h4>姓名：`+doc.data().LastName + doc.data().FirstName +`</h4>`;
       html +=  `<h3>性別：`+doc.data().Gender+`</h3>`;
       html +=  `<h3>身份：`+doc.data().Status+`</h3>`;
       html +=  `<h3>地區：`+doc.data().Location[0] +  ` ` + doc.data().Location[1] +`</h3>`;
