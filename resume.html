@@ -1,0 +1,63 @@
+---
+layout: default
+title: FineTutor-我的履歷
+page-title: 我的履歷
+home-title: 我的履歷
+description: 我的履歷
+---
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% include header_teacher.html %}
+{% include boot_teacher.html %}
+
+<style>
+  @media screen and (min-width: 40em) {
+            body {
+            font-size: 1.25em;
+            }
+      }
+  /* navbar start */
+    nav {
+      margin-top:20px;
+    }
+    a {
+      color:rgb(44, 62, 126);
+      font-weight:700;
+    }
+    .nav-pills .nav-link.active{
+      background: rgb(63, 87, 124);
+    }
+  
+    .pageDiv{ 
+	/* width:900px;  */
+	margin-top:auto; 
+	margin-left:auto; 
+  margin-right:auto;
+  margin-bottom:auto;
+	text-align:left;
+
+} 
+
+.personalForm{
+	background-color:#424242;
+	/* width:900px;  */
+	text-align:left;
+}
+    
+  </style>
+<main>
+  <p>&ensp;</p>
+  <div class="pageDiv mt-1 row" style="background-color: white;">
+    <div class="col-sm-3"></div>
+    <div class="col personalForm col-sm-6">
+        <p>&ensp;</p>
+        <div class="resume" style="color: white;"></div>
+    </div> 
+    <div class="col-sm-3"></div>  
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% include footer.html %}
+<script src="assets/js/resume.js"></script>

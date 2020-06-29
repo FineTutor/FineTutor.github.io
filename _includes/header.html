@@ -1,0 +1,97 @@
+<!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+<header id="index-header">
+  <div class="top-center">
+      <div class="logo">
+          <a href="{{ "/" | relative_url }}" title="Logo">
+            <img src="/assets/img/LOGO.png" style="width: 120px; margin-top: 10px;">
+          </a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              {% for i in site.nav %}
+                <li><a href="{{ i[1] }}">{{ i[0] }}</a></li>
+              {% endfor %}
+              <li class="logged-out" style="display: none;"><a href="/login.html">登入</a></li>
+              <li class="logged-out" style="display: none;"><a href="/signup.html">註冊</a></li>
+              <li class="logged-in" style="display: none;"><a href="/" id="logout">登出</a></li>
+
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot.png" alt=""></a>
+      </div>
+  </div>
+</header> -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+
+  <!-- bootstrap popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<header id="index-header">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel = "stylesheet"
+    href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link href="/assets/img/LOGO.png" rel="shortcut icon" />
+<link href="/assets/img/LOGO.png" rel="apple-touch-icon-precomposed" />
+  
+  <nav class="grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">
+        <img src="/assets/img/LOGO.png" style="width: 120px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-small-and-down">
+          
+          <!-- <li class="logged-in">
+            <a href="#" class="grey-text log_out" id="logout" style="font-size: 1.1rem;font-weight: bolder;">登出</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger hidden" data-target="modal-create">Create Guide</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger log_in" data-target="modal-login" style="font-size: 1.1rem;font-weight: bolder;">登入</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger sign_up" data-target="modal-signup" style="font-size: 1.1rem;font-weight: bolder;">註冊</a>
+          </li> -->
+          <li class="logged-out" style="display: none; "><a href="/login.html" style="color:grey;font-weight: bold;font-size:17px;">登入</a></li>
+          <li class="logged-out" style="display: none;"><a href="/signup.html" style="color:grey;font-weight: bold;font-size:17px;">註冊</a></li>
+          <li class="logged-in" style="display: none;font-size:17px;"><a href="/" id="logout" style="color:grey;font-weight: bold;">登出</a></li>
+        </span>
+      </ul>
+      <!-- <div class="menu right">
+          <img src="/assets/img/menu.png" alt="">
+      </div>
+      <div class="hamburger">
+        <div class="close">
+            <div class="close-img"><img src="/assets/img/close.png" alt=""></div>
+        </div>
+        <p class="logout-rwd log_out" id="logout">登出</p>
+        <p class="login-rwd modal-trigger log_in" data-target="modal-login">登入</p>
+        <p class="signup-rwd modal-trigger sign_up" data-target="modal-signup">註冊</p>
+      </div> -->
+      
+      <div id="top-boot" class="topboot">
+        <div class="menu right">
+          <img src="/assets/boot.png" alt="">
+        </div>
+        <!-- <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot.png" width='30px' height='30px' alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot.png" width='30px' height='30px' alt=""></a> -->
+      </div>
+    </div>
+  </nav>
+  <style>
+    #top-boot{
+      float:right;
+      display:none;
+    }
+     @media(max-width:600px){
+      #top-boot{
+        display:block;
+      }
+    }
+  </style>
+</header>

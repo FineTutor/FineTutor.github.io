@@ -1,0 +1,145 @@
+---
+layout: default
+title: FineTutor
+page-title: FineTutor家教網
+home-title: FineTutor家教網
+description: FineTutor家教網
+---
+
+{% include header.html %}
+{% include boot.html %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="assets/css/same.css"> -->
+<link rel="stylesheet" href="assets/css/homepage.css">
+
+<main>
+  <div class="row">
+    <div class="col-sm-12 col-md-5" >
+      <h4 class="title">Welcome to FineTutor<br><p>FineTutor是一個家教網站，致力於幫助家長與老師快速找到適合的對象。</p></h4>
+      
+      <div class="image">
+          <img class="homepage" src="/assets/img/homepage.png" alt="svg" >
+      </div>
+    </div>
+    <div class = "register col-sm-12 col-md-6 card up-card" style="margin-top: 50px;">
+        <div class = "card-content">
+          <span class = "card-title"></span>
+          <div class="account-details"></div>
+          <div class="title-details"></div>
+             
+             <!-- <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla similique, numquam in eos nam velit odit rem aliquam, dolorem, sint magni maxime ducimus dolorum iste placeat! Libero officia autem praesentium!</p> -->
+          <form id="login-form" style="margin-bottom: 40px; display: none;">
+                <h4 style="color:rgb(250, 250, 250)">註冊</h4>
+                <div class="row" style ="margin:0;">
+                    <div class="input-field col-sm-6">
+                      <input type="email" id="login-email" style="padding:0.5rem;" required />
+                      <label for="login-email" style="color:rgb(202, 202, 202);font-weight: 500;">郵件</label>
+                    </div>
+                </div>
+                <div class="row" style ="margin:0;">
+                  <div class="input-field col-sm-6">
+                    <input type="password" id="login-password" style="padding:0.5rem;" required />
+                    <label for="login-password" style="color:rgb(202, 202, 202);font-weight: 500;">密碼</label>
+                  </div>
+                </div>
+                <div class = "collection-item">
+                  <code class = "language-markup"></code>
+                  <button type="submit" class = "waves-effect waves-lightmodal-trigger" data-target="modal-signup" style="background-color:#342727b9;color:white;">登入</button>
+                </div>
+                <p class='error'></p>
+          </form>
+          <form class="logged-out" id="signup-form" style="margin-bottom: 40px;">
+              <h4 style="color:rgb(250, 250, 250)">註冊</h4>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <p style="color:rgb(221, 221, 221); font-size:1em;">請選擇身分</p>
+                      <p>             
+                          <input id = "teacher" type = "radio" name ="identity" value = "teacher" />
+                          <label for = "teacher" style="color:rgb(221, 221, 221);">老師</label>
+                      </p>
+                      <p>
+                          <input id = "student" type = "radio" name ="identity" value = "student"/>
+                          <label for = "student" style="color:rgb(221, 221, 221);">學生</label>
+                      </p>
+                  </div>
+              </div>
+              <div class = "row" style ="margin:0;">
+                <div class="input-field col-sm-6">
+                  <label for="signup-name" style="color:rgb(202, 202, 202);font-weight: 500;">您的名字</label>
+                  <input type="text" id="signup-name" style="padding:0.5rem;" required /> 
+                </div>
+              </div>
+              <div class="row" style ="margin:0;">
+                  <div class="input-field col-sm-6">
+                    <label for="signup-email" style="color:rgb(202, 202, 202);font-weight: 500;">郵件</label>
+                    <input type="email" id="signup-email" style="padding:0.5rem;" required />
+                  </div>
+              </div>
+              <div class="row" style ="margin:0;">
+                <div class="input-field col-sm-6">
+                  <label for="signup-password" style="color:rgb(202, 202, 202);font-weight: 500;">密碼</label>
+                  <input type="password" id="signup-password" style="padding:0.5rem;" required />
+                </div>
+              </div>
+              <div class = "collection-item">
+                <code class = "language-markup"></code>
+                <button type="submit" class = "waves-effect waves-lightmodal-trigger" data-target="modal-signup" style="background-color:#d4cbcbfb;color:black;padding:12px;font-size:16px;font-weight: bold;">註冊</button>
+              </div>
+              <p class='error'></p>
+          </form>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-1" >
+    </div>
+  </div>
+  <div>
+    <div class="home_bg" style="background:blanchedalmond;">
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 style="font-style:normal;text-align: center;margin-top:80px;font-weight: 700;">特色功能</h3>
+        </div>
+        <div class="col-sm-12 col-md-4" style="height: 300px !important;">        
+          <div class="icon1">
+              <img class="feature" src="/assets/img/idea.png" alt="svg" >
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-7">        
+          <div class="card card_pos" >
+            <div class="card-body">
+              <h4 class="card-title" style="color:rgb(31, 28, 28);font-weight:bold;font-size:26px;">專屬推薦</h4><br>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+              <p class="card-text" style="font-size:18px;">填寫完履歷/學生資料<br>系統自動推薦三位最匹配人選</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-1" ></div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="col-sm-12" ></div> -->
+        <div class="col-sm-12 col-md-4"  style="height: 280px !important;">        
+          <div class="icon">
+              <img class="feature" src="/assets/img/invitation.png" alt="svg">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-7">        
+          <div class="card card_pos card_pos2">
+            <div class="card-body">
+              <h4 class="card-title" style="color:rgb(31, 28, 28);font-weight:bold;font-size:26px;">配對進度</h4><br>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+              <p class="card-text" style="font-size:18px;">1.一次最多挑選三位投遞履歷/傳送邀請<br>
+                2.避免濫投、家長收大量履歷等狀況
+                <br>系統自動推薦三位最匹配人選</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-2" ></div>
+      </div>
+  </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>        
+
+{% include footer.html %}

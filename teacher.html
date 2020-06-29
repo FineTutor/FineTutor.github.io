@@ -1,0 +1,179 @@
+---
+layout: default
+title: FineTutor-學生案件
+page-title: 學生案件
+home-title: 學生案件
+description: 教師來找學生吧
+---
+
+{% include header_teacher.html %}
+{% include boot_teacher.html %}
+<link rel="stylesheet" href="assets/css/teacher.css">
+
+<main>
+  <!-- <div class="title-details"></div>
+  <div class="account-details" style="display: none;"></div>
+  <div class="search__container">
+    <p class="search__title">
+        輸入關鍵字進一步搜尋
+    </p>
+    <input class="search__input" type="text" placeholder="Search">
+  </div>
+
+<div class="container">
+  <div class="block"></div>
+  <div class="row" style="margin:10px;">
+    <div class="col s4 m3 l4"></div>
+    <div class="col s3 m3 l2">
+      <div class="sel_drop">
+       
+      </div>
+    </div>
+  </div>
+  <div class="row">    
+        <div class="col s4 m4 l4 image" style="text-align: right;">
+        <img src="/assets/img/teacher.png" alt="image" class="t_img" style="width: inherit; max-height: 200px; max-width: 130px;">
+      </div>
+      
+      <div class="col s8 m8 l8">
+        <div class="row"  style="margin:0;">
+          <form action='' class='form'  id="SearchForm">
+            <div>
+              <label for="Location" style="color:black;">授課地區:</label>
+              <div role="tw-city-selector" id="Location"></div>
+            </div>
+            <div>
+              <label for="age" style="color:black;">學生年級:</label>
+              <select name="age"  style="width: 110px;">
+              　<option value="elem">小學</option>
+              　<option value="junior">國中</option>
+              　<option value="senior">高中</option>
+              　<option value="college">大學</option>
+              　<option value="social">社會人士</option>
+              </select>
+            </div>
+            <div>
+              <label for="subject" style="color:black;">科目:</label>
+              <select name="subject" style="width: 110px;">
+                <option value="0">國文</option>
+                <option value="1">英文</option>
+                <option value="2">數學</option>
+                <option value="3">自然</option>
+                <option value="4">社會</option>
+              　<option value="5">物理</option>
+              　<option value="6">化學</option>
+              　<option value="7">生物</option>
+              　<option value="8">地科</option>
+              　<option value="9">歷史</option>
+              　<option value="10">地理</option>
+              　<option value="11">公民</option>
+              </select>
+            </div>
+            <div style="text-align: right;">
+              <input class='button button-info' type='submit' value='搜尋' style="margin-left: auto;">
+            </div>
+          </form>
+        </div>
+      </div>
+  </div> -->
+
+<!-- 老師內文 -->
+
+<div class="container">
+  <div class="block"></div>
+  <!-- <div class="row" style="margin:10px;">
+    <div class="col-sm-4 col-md-3 col-lg-4"></div>
+    <div class="col-sm-3 col-md-3 col-lg-2">
+      <div class="sel_drop">
+        
+      </div>
+    </div>
+  </div> -->
+  <div class="row" style="margin-top:60px;">    
+      <div class="col-sm-3 col-md-3 col-lg-4 image">
+        <img src="/assets/img/teacher.png" alt="image" class="t_img" >
+      </div>
+      
+      <div class="col-sm-7 col-md-8 col-lg-6">
+        <div class="row"  style="margin:auto;">
+          <div class="col-sm-12 col-md-3"></div>
+            <form action='' class='form'  id="SearchForm">
+              <div>
+                <label for="Location" style="color:black;">授課地區:</label>
+                <div role="tw-city-selector" id="Location"></div>
+              </div>
+              <div>
+                <label for="age" style="color:black;">學生年級:</label>
+                <select name="age"  style="width: 110px;">
+                　<option value="elem">小學</option>
+                　<option value="junior">國中</option>
+                　<option value="senior">高中</option>
+                　<option value="college">大學</option>
+                　<option value="social">社會人士</option>
+                </select>
+              </div>
+              <div>
+                <label for="subject" style="color:black;">科目:</label>
+                <select name="subject" style="width: 110px;">
+                  <option value="0">國文</option>
+                  <option value="1">英文</option>
+                  <option value="2">數學</option>
+                  <option value="3">自然</option>
+                  <option value="4">社會</option>
+                　<option value="5">物理</option>
+                　<option value="6">化學</option>
+                　<option value="7">生物</option>
+                　<option value="8">地科</option>
+                　<option value="9">歷史</option>
+                　<option value="10">地理</option>
+                　<option value="11">公民</option>
+                </select>
+              </div>
+              <div style="text-align: right;">
+                <input class='btn btn-dark search_btn' type='submit' value='搜尋' style="margin-left: auto;">
+              </div>
+            </form>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blank"></div>
+  <div class="searchedInfo" style="text-align: center;"></div>
+  
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="checkmore" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLongTitle">案件詳情</h2>
+          </div>
+          <div class="modal-body" id="CaseDetail">
+              <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">李同學</h4>
+              <p>科目:</p><br>
+              <p>地點:</p><br>
+              <p>意願薪資:</p><br>
+              <p>時段:</p><br>
+              <p id = "CaseID" style = "display: none;"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-dark" id="SendRequest">傳送邀請</button>
+          </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+</main>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>         -->
+<script src="assets/js/teacher-advice.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="assets/js/tw-city-selector.js"></script>
+<script src="assets/js/searchcase.js"></script>
+<script>
+  new TwCitySelector();
+</script>
+{% include footer.html %}

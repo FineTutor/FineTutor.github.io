@@ -1,0 +1,69 @@
+<!-- <div id="boot-area">
+    <ul>
+        <a href="/teacher.html"><li>首頁</li></a>
+        <a href="/advice.html"><li>專屬推薦</li></a>
+        <a href="/progress.html"><li>配對進度</li></a>
+        <a href="/resume.html"><li>我的履歷</li></a>
+        <a href="/resumeedit.html"><li>修改履歷</li></a>
+        <a href="/info.html"><li>帳號資料</li></a>
+        <a class = "logged-in" href="#" id="logout2"><li>登出</li></a>
+    </ul>
+</div> -->
+
+<!-- <div id="top-boot" class="topboot"> -->
+    
+    <div id="boot-area" class="hamburger">
+        <div class="close">
+            <div class="close-img"><img src="/assets/img/close.png" alt=""></div>
+        </div>
+        <!-- <ul> -->
+            <p><a href="/teacher.html">首頁</a></p>
+            <p><a href="/advice.html">專屬推薦</a></p>
+            <p><a href="/progress.html">配對進度</a></p>
+            <p><a href="/resume.html">我的履歷</a></p>
+            <p><a href="/resumeedit.html">修改履歷</a></p>
+            <p><a href="/info.html">帳號資料</a></p>
+            <p><a class = "logged-in" id="logout2" href="#">登出</a></p>
+        <!-- </ul> -->
+    </div>
+    <!-- <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot.png" width='30px' height='30px' alt=""></a>
+    <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot.png" width='30px' height='30px' alt=""></a> -->
+  <!-- </div> -->
+<!-- </div> -->
+
+<style>
+
+    .topboot{
+      float:right;
+      display:none;
+    }
+    @media(max-width:600px){
+      #top-boot{
+        display:block;
+      }
+    }
+    .hamburger p a{
+        text-decoration: none;
+        color:black;
+        font-weight: 100;
+    }
+</style>
+<script>
+    // 控制手機板選單顯示
+    $('.menu').click(function() {
+        $('.hamburger').addClass('show')
+    })
+    $('.close-img').click(function() {
+      console.log("AAA");
+      $('.hamburger').removeClass('show')
+    })
+    $('.logout-rwd').click(function() {
+        $('.hamburger').removeClass('show')
+    })
+    $('.login-rwd').click(function() {
+        $('.hamburger').removeClass('show')
+    })
+    $('.signup-rwd').click(function() {
+        $('.hamburger').removeClass('show')
+    })
+  </script>
