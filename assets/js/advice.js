@@ -176,7 +176,7 @@ window.setTimeout(function() {
             })
         }
     })
-}, 1500);
+}, 2000);
 
 function sendReq(selectElm){
     var user = firebase.auth().currentUser;
