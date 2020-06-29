@@ -80,8 +80,9 @@ description: 學生來找老師吧
 <!-- 老師內文 -->
 
 <div class="container">
-  <div class="block"></div>
-  <div class="row" style="margin:10px;">
+  <div id="account-details"></div>
+  <div id="title-details"></div>
+  <div class="row">
     <div class="col-sm-4 col-md-3 col-lg-4"></div>
     <div class="col-sm-3 col-md-3 col-lg-2">
       <div class="sel_drop">
@@ -95,9 +96,8 @@ description: 學生來找老師吧
       </div>
       
       <div class="col-sm-7 col-md-8 col-lg-6">
-        <div class="row"  style="margin:0;">
-          <div class="col-sm-12 col-md-3"></div>
-            <form action='' class='form'  id="SearchForm">
+        <div class="row"  style="margin:auto; place-content: center;">
+          <form action='' class='form'  id="SearchForm">
               <div>
                 <label for="Location" style="color:black;">上課地點:</label>
                 <div role="tw-city-selector" id="Location"></div>
