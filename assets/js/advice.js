@@ -20,7 +20,7 @@ window.setTimeout(function() {
                 Age.push(i);
             }
         }
-
+        console.log("Get User");
         if(character == 'teacher'){
             SearchRef = db.collection("StudentInfo");
 
@@ -54,7 +54,12 @@ window.setTimeout(function() {
                         display.push(candidate[i]);
                     }
                 }
-                
+
+                console.log(candidate);
+                console.log(display);
+
+                var SearchedInfo;
+
                 // show info of students in display
                 for(let i = 0; i < display.length; i++){
                     SearchRef.doc(display[i]).get().then(doc => {
@@ -69,7 +74,7 @@ window.setTimeout(function() {
                             cardClass = "card-3";
                         }
 
-                        let SearchedInfo = document.querySelector("." + cardClass);
+                        SearchedInfo = document.querySelector("." + cardClass);
                         SearchedInfo.innerHTML = `
                         <h3 class="card-title">` + doc.data().LastName + ` 同學</h3>
                             <p>科目：` + doc.data().SubjectsString + `</p><br>
@@ -140,7 +145,12 @@ window.setTimeout(function() {
                         display.push(candidate[i]);
                     }
                 }
-                
+
+                console.log(candidate);
+                console.log(display);
+
+                var SearchedInfo;
+
                 // show info of teachers in display
                 for(let i = 0; i < display.length; i++){
                     SearchRef.doc(display[i]).get().then(doc => {
@@ -155,7 +165,7 @@ window.setTimeout(function() {
                             cardClass = "card-3";
                         }
     
-                        let SearchedInfo = document.querySelector("." + cardClass);
+                        SearchedInfo = document.querySelector("." + cardClass);
                         SearchedInfo.innerHTML = `
                         <h3 class="card-title">` + doc.data().LastName + ` 老師</h3>
                             <p>科目：` + doc.data().SubjectsString + `</p><br>
@@ -192,7 +202,7 @@ window.setTimeout(function() {
             })
         }
     })
-}, 1000);
+}, 2000);
 
 function sendReq(selectElm){
     var user = firebase.auth().currentUser;
