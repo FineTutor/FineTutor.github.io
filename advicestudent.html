@@ -9,12 +9,6 @@ description: 專屬推薦
 {% include header_student.html %}
 {% include boot_student.html %}
 <main>
-    <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>        
-  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-  <script src="teacher.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- bootstrap select -->
   <!-- <script>
     $(document).ready(function(e) {
@@ -26,91 +20,15 @@ description: 專屬推薦
     <div class="container">
         <div class="title">
             <h1>專屬推薦</h1>
-            <p>為您挑選出最符合您需求的3位老師/學生，趕緊發送配對邀請給他/她吧!</p>
+            <p>為您挑選出最符合您需求的3位老師，趕緊發送配對邀請給他/她吧!</p>
         </div>
-        <div class = "row" style="margin-top:80px;">
-            <div class = "col-sm-12 col-md-4">
-                <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
-                    
-                    <div class="card-body">
-                      <h3 class="card-title">張老師/同學</h3>
-                        <p>科目:</p><br>
-                        <p>地點:</p><br>
-                        <p>意願薪資:</p><br>
-                        <p>時段:</p><br>
-                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#checkmore">
-                            查看更多
-                          </button>
-                    </div>
-                </div>
+        <div class = "row" style="margin-top:80px;" id = "AdviceCard">
+            <div style = "text-align: center;">
+                <p>請再稍後片刻，符合您的專屬配對即將登場！</p>
             </div>
-            
-            <div class = "col-sm-12 col-md-4">
-                <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.656);color:white;">
-                    
-                    <div class="card-body">
-                      <h3 class="card-title">張老師/同學</h3>
-                        <p>科目:</p><br>
-                        <p>地點:</p><br>
-                        <p>意願薪資:</p><br>
-                        <p>時段:</p><br>
-                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#checkmore">
-                            查看更多
-                          </button>
-                    </div>
-                </div>
-            </div>
-            <div class = "col-sm-12 col-md-4">
-                <!-- <div class = "card blue-grey lighten-4">
-                    <div class = "card-content">
-                        <span class = "card-title"><h3>張老師/同學</h3></span>
-                        <p>科目:</p><br>
-                        <p>地點:</p><br>
-                        <p>意願薪資:</p><br>
-                        <p>時段:</p><br>
-                    </div>
-                    
-                    <div class = "card-action" style="padding-top:0;">
-                        <button class = "btn">
-                            <b class = "material-icons">查看</b></button>
-                    </div>
-                    </div>
-                </div> -->
-                <div class="card" style="margin-bottom:50px;background: rgba(30, 48, 73, 0.658);color:white;">
-                    
-                    <div class="card-body">
-                      <h3 class="card-title">張老師/同學</h3>
-                        <p>科目:</p><br>
-                        <p>地點:</p><br>
-                        <p>意願薪資:</p><br>
-                        <p>時段:</p><br>
-                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#checkmore">查看更多</button>
-                    </div>
-                </div>
-            </div>
-            
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="checkmore" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLongTitle">專屬推薦</h2>
-            </div>
-            <div class="modal-body">
-                <h5 class="card-title">李同學</h5>
-                <p>科目:</p><br>
-                <p>地點:</p><br>
-                <p>意願薪資:</p><br>
-                <p>時段:</p><br>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-dark">傳送邀請</button>
-            </div>
-        </div>
         </div>
     </div>
+    <div id = "AdviceModal"></div>
     <style>
         body {
             /* padding: 2em 0; */
@@ -139,4 +57,11 @@ description: 專屬推薦
     </style>
 
 </main>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>        
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="assets/js/advice.js"></script>
 {% include footer.html %}
