@@ -38,22 +38,22 @@ window.setTimeout(function() {
                     }
                 })
 
-                //randomly choose three students form candidate
-                // display = [];
-                // if(candidate.length > 3){
-                //     for(let i = 0; i < 3; i++){
-                //         let num;
-                //         do{
-                //             num = Math.floor(Math.random() * candidate);
-                //         }while(display.includes(num));
-                //         display.push(num);
-                //     }
-                // }
-                // else{
-                //     for(let i = 0; i < candidate.length; i++){
-                //         display.push(candidate[i]);
-                //     }
-                // }
+                // randomly choose three students form candidate
+                display = [];
+                if(candidate.length > 3){
+                    for(let i = 0; i < 3; i++){
+                        let num;
+                        do{
+                            num = Math.floor(Math.random() * candidate.length);
+                        }while(display.includes(num));
+                        display.push(num);
+                    }
+                }
+                else{
+                    for(let i = 0; i < candidate.length; i++){
+                        display.push(candidate[i]);
+                    }
+                }
 
                 console.log(candidate);
                 console.log(display);
@@ -63,7 +63,7 @@ window.setTimeout(function() {
 
                 // show info of students in display
                 for(let i = 0; i < 3; i++){
-                    SearchRef.doc(candidate[i]).get().then(doc => {
+                    SearchRef.doc(display[i]).get().then(doc => {
                         var cardClass;
                         if(i == 0){
                             cardClass = "card-1";
@@ -101,7 +101,7 @@ window.setTimeout(function() {
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">送出試教邀請</button>
+                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">移除邀請</button>
                                     </div>
                                 </div>
                             </div>
