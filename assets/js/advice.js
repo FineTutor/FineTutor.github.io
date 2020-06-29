@@ -81,14 +81,14 @@ window.setTimeout(function() {
                             <p>科目：` + doc.data().SubjectsString + `</p><br>
                             <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
                             <p>年紀：` + doc.data().Status + `</p><br>
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button>
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#S` + doc.id + `">查看更多</button>
                         `;
                         AdviceModal.innerHTML += `
-                        <div id="modal` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
+                        <div class="modal fade" id="S` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content" style="color:black;">
+                                <div class="modal-content">
                                     <div class="modal-header">
-                                        <h2 class="modal-title" id="exampleModalLongTitle">專屬推薦</h2>
+                                        <h2 class="modal-title" id="exampleModalLongTitle">案件詳情</h2>
                                     </div>
                                     <div class="modal-body" id="CaseDetail">
                                         <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">`+doc.data().LastName+` 同學</h4>
@@ -101,7 +101,7 @@ window.setTimeout(function() {
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">傳送邀請</button>
+                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">送出試教邀請</button>
                                     </div>
                                 </div>
                             </div>
