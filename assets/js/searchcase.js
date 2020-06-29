@@ -51,7 +51,7 @@ SearchForm.addEventListener('submit', (e) =>{
                     SearchRef.doc(doc.id).get().then(doc => {
                         if (doc.data().Subjects[subject] == true) {
                             SearchedInfo.innerHTML += `
-                            <div class="card">
+                            <div class="card" style = "max-width: 800px; margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="font-weight: bold;margin-bottom:20px;">
                                         ` + doc.data().LastName + ` 同學
@@ -123,7 +123,7 @@ SearchForm.addEventListener('submit', (e) =>{
                             }
                             if (find == 1) {
                                 SearchedInfo.innerHTML += `
-                                <div class="card">
+                                <div class="card" style = "max-width: 800px; margin: 20px;">
                                     <div class="card-body">
                                         <h4 class="card-title" style="font-weight: bold;margin-bottom:20px;">
                                             ` + doc.data().LastName + ` 老師
