@@ -59,6 +59,7 @@ window.setTimeout(function() {
                 console.log(display);
 
                 var SearchedInfo;
+                var AdviceModal = document.querySelector("#AdviceModal");
 
                 // show info of students in display
                 for(let i = 0; i < candidate.length; i++){
@@ -82,7 +83,7 @@ window.setTimeout(function() {
                             <p>年紀：` + doc.data().Status + `</p><br>
                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button>
                         `;
-                        SearchedInfo.innerHTML += `
+                        AdviceModal.innerHTML += `
                         <div id="modal` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content" style="color:black;">
@@ -106,8 +107,6 @@ window.setTimeout(function() {
                             </div>
                         </div>
                         `;
-
-                        console.log(SearchedInfo);
                     })
                 }
             })
