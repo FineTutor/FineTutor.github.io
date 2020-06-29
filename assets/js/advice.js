@@ -51,7 +51,7 @@ window.setTimeout(function() {
                 }
                 else{
                     for(let i = 0; i < candidate.length; i++){
-                        display.push(candidate[i]);
+                        display.push(i);
                     }
                 }
 
@@ -63,51 +63,59 @@ window.setTimeout(function() {
 
                 // show info of students in display
                 for(let i = 0; i < 3; i++){
-                    SearchRef.doc(display[i]).get().then(doc => {
-                        var cardClass;
-                        if(i == 0){
-                            cardClass = "card-1";
-                        }
-                        else if(i == 1){
-                            cardClass = "card-2";
-                        }
-                        else{
-                            cardClass = "card-3";
-                        }
-
-                        SearchedInfo = document.querySelector("." + cardClass);
-                        SearchedInfo.innerHTML = `
-                        <h3 class="card-title">` + doc.data().LastName + ` 同學</h3>
-                            <p>科目：` + doc.data().SubjectsString + `</p><br>
-                            <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
-                            <p>年紀：` + doc.data().Status + `</p><br>
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#S` + doc.id + `">查看更多</button>
-                        `;
-                        AdviceModal.innerHTML += `
-                        <div class="modal fade" id="S` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title" id="exampleModalLongTitle">案件詳情</h2>
-                                    </div>
-                                    <div class="modal-body" id="CaseDetail">
-                                        <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">`+doc.data().LastName+` 同學</h4>
-                                        <p>科目：`+doc.data().SubjectsString+`</p><br>
-                                        <p>年紀：`+doc.data().Status+`</p><br>
-                                        <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
-                                        <p>意願薪資：`+doc.data().Salary+`</p><br>
-                                        <p>備註：`+doc.data().StatusInfo+`</p><br>
-                                        <p id = "CaseID" style = "display: none;">`+doc.id+`</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                                        <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">移除邀請</button>
+                    var cardClass;
+                    if(i == 0){
+                        cardClass = "card-1";
+                    }
+                    else if(i == 1){
+                        cardClass = "card-2";
+                    }
+                    else{
+                        cardClass = "card-3";
+                    }
+                    if (display.length > 0) {
+                        SearchRef.doc(candidate[display[i]]).get().then(doc => {
+                            SearchedInfo = document.querySelector("." + cardClass);
+                            SearchedInfo.innerHTML = `
+                            <h3 class="card-title">` + doc.data().LastName + ` 同學</h3>
+                                <p>科目：` + doc.data().SubjectsString + `</p><br>
+                                <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
+                                <p>年紀：` + doc.data().Status + `</p><br>
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#S` + doc.id + `">查看更多</button>
+                            `;
+                            AdviceModal.innerHTML += `
+                            <div class="modal fade" id="S` + doc.id + `" tabindex="-1" role="dialog" aria-labelledby="checkmore" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title" id="exampleModalLongTitle">案件詳情</h2>
+                                        </div>
+                                        <div class="modal-body" id="CaseDetail">
+                                            <h4 class="card-title" style="margin-bottom:40px;font-weight: bold;">`+doc.data().LastName+` 同學</h4>
+                                            <p>科目：`+doc.data().SubjectsString+`</p><br>
+                                            <p>年紀：`+doc.data().Status+`</p><br>
+                                            <p>地點：` + doc.data().Location[0] + ` ` + doc.data().Location[1] + `</p><br>
+                                            <p>意願薪資：`+doc.data().Salary+`</p><br>
+                                            <p>備註：`+doc.data().StatusInfo+`</p><br>
+                                            <p id = "CaseID" style = "display: none;">`+doc.id+`</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                                            <button type="button" class="btn btn-dark" id="` + doc.id + `" onclick="sendReq(this)">移除邀請</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            `;
+                        })
+                        display.pop();
+                    } else {
+                        SearchedInfo = document.querySelector("." + cardClass);
+                        SearchedInfo.innerHTML = `
+                        <h3 class="card-title"></h3>
+                            <p>沒有專屬配對...試著將條件放寬點吧！</p>
                         `;
-                    })
+                    }
                 }
             })
         }
