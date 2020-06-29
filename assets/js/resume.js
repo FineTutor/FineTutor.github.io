@@ -21,7 +21,7 @@ window.setTimeout(function() {
       html +=  `<h5>&ensp;&ensp;&ensp;&ensp;Line ID：`+doc.data().Contact.Line+`</h5>`;
       html +=  `<h5>&ensp;&ensp;&ensp;&ensp;空閒時間：`+doc.data().Contact.AvailableTime+`</h5><hr>`;
       html +=  `<h4>自我介紹：</h4>`;
-      html +=  `<p>&ensp;&ensp;&ensp;&ensp;`+ doc.data().Biography +`</p>`;
+      html +=  `<h5>&ensp;&ensp;&ensp;&ensp;`+ doc.data().Biography +`</h5>`;
     }
     resume.innerHTML = html;
   })
