@@ -360,7 +360,7 @@ body{
         margin:0px 20px 10px 20px;
       }
       .product-card {
-        background-color: #fdfefe;
+        background-color: #3b3c64 !important;
         max-width: 550px;
         min-height: 400px;
         margin: 0 auto;
