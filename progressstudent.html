@@ -67,216 +67,217 @@ description: 配對進度
 
     </div>
     <!-- Modal -->
-        <style>
+    <style>
 
-        body {
-            /* padding: 2em 0; */
-            background-color: #f3f3f3;
-            font-family: "Titillium Web", sans-serif;
+      body {
+          /* padding: 2em 0; */
+          background-color: #f3f3f3;
+          font-family: "Titillium Web", sans-serif;
+      }
+
+        @media screen and (min-width: 40em) {
+          body {
+            font-size: 1.25em;
+          }
+        }
+        nav {
+          margin-top:20px;
+        }
+        a {
+          color:rgb(44, 62, 126);
+          font-weight:700;
+        }
+        .nav-pills .nav-link.active{
+          background: rgb(63, 87, 124);
         }
 
-          @media screen and (min-width: 40em) {
-            body {
-              font-size: 1.25em;
-            }
-          }
-          nav {
-            margin-top:20px;
-          }
-          a {
-            color:rgb(44, 62, 126);
-            font-weight:700;
-          }
-          .nav-pills .nav-link.active{
-            background: rgb(63, 87, 124);
-          }
-
-          .toggle-btn{
-            
-            display: inline-block;
-            padding: 10px 0px;
-            border: solid 1.5px #333;
-            border-radius: 5rem;
-            /* background: #333; */
-            color:black;
-            margin:20px 5px 30px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            opacity: 0.7;
-          }
-          .toggle-btn:hover{
-            /* background: #fff;
-            color: #333; */
-            opacity: 1;
-            background: rgba(51, 51, 51, 0.836);
-            color:white;
-            text-decoration: none;
-          }
+        .toggle-btn{
           
-          
-          .title {
-            margin: 50px;
-            margin-bottom: 0;
-            text-align: center;
-          }
+          display: inline-block;
+          padding: 10px 0px;
+          border: solid 1.5px #333;
+          border-radius: 5rem;
+          /* background: #333; */
+          color:black;
+          margin:20px 5px 30px 30px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1rem;
+          opacity: 0.7;
+        }
+        .toggle-btn:hover{
+          /* background: #fff;
+          color: #333; */
+          opacity: 1;
+          background: rgba(51, 51, 51, 0.836);
+          color:white;
+          text-decoration: none;
+        }
+        
+        
+        .title {
+          margin: 50px;
+          margin-bottom: 0;
+          text-align: center;
+        }
+        .title p {
+          padding-top:10px;
+          font-size: 1.3rem;
+        }
+        
+        .text_check{
+          margin-top:25px;
+          text-align: right;
+        }
+        .product-card {
+          background-color: #3b3c64 !important;
+          max-width: 550px;
+          min-height: 400px;
+          margin: 0 auto;
+          margin-top: 50px;
+          margin-bottom: 150px;
+          box-shadow: 8px 12px 30px #b3b3b3;
+          color: #919495;
+          font-weight: normal;
+          text-align: left;
+          font-size: 18px;
+          position: relative;
+        }
+        
+        .product-details {
+          width: 50%;
+          /* float: left; */
+          margin:auto;
+          height: 100%;
+          padding: 25px 0;
+        }
+        .product-details h3 {
+          color: white;
+          margin-bottom: 35px;
+          font-style:normal;
+        }
+        .product-details button {
+          width: 150px;
+          height: 50px;
+          margin-top: 20px;
+          padding-top:10px;
+          font-weight: bold;
+          background-color: rgba(22, 35, 83, 0.801);
+          border-radius: 0;
+          color: white;
+          box-shadow: 2px 2px 7px rgb(30, 44, 97);
+        }
+        .product-details button:hover, .product-details button:active, .product-details button:focus {
+          color: black;
+          background-color: rgba(184, 191, 218, 0.801);
+          box-shadow:none;
+        }
+        
+        .product-image {
+          display:none;
+          position: absolute;
+          right: -20px;
+          top: -40px;
+        }
+        .product-image img {
+          max-width: 180px;
+        }
+        .bg {
+          /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat; */
+          background-size: cover;
+          /* opacity: 0.5; */
+        }
+        @media (max-width: 992px) {
           .title p {
-            padding-top:10px;
-            font-size: 1.3rem;
-          }
-          
-          .text_check{
-            margin-top:25px;
-            text-align: right;
+              font-size: 1rem;
           }
           .product-card {
-            background-color: #fdfefe;
-            max-width: 550px;
-            min-height: 400px;
-            margin: 0 auto;
-            margin-top: 50px;
-            margin-bottom: 150px;
-            box-shadow: 8px 12px 30px #b3b3b3;
-            color: #919495;
-            font-weight: normal;
-            text-align: left;
-            font-size: 18px;
-            position: relative;
+              overflow: hidden;
+              margin-bottom: 0px;
           }
-          
           .product-details {
-            width: 50%;
-            /* float: left; */
-            margin:auto;
-            height: 100%;
-            padding: 50px 0;
+              width: 60%;
+              z-index: 1;
+              padding-top:70px;
           }
-          .product-details h2 {
-            color: #333;
-            margin-bottom: 35px;
-          }
-          .product-details button {
-            width: 150px;
-            height: 50px;
-            margin-top: 20px;
-            padding-top:10px;
-            font-weight: bold;
-            background-color: rgba(22, 35, 83, 0.801);
-            border-radius: 0;
-            color: white;
-            box-shadow: 2px 2px 7px rgb(30, 44, 97);
-          }
-          .product-details button:hover, .product-details button:active, .product-details button:focus {
-            color: black;
-            background-color: rgba(184, 191, 218, 0.801);
-            box-shadow:none;
-          }
-          
+        
           .product-image {
-            display:none;
-            position: absolute;
-            right: -20px;
-            top: -40px;
+              display:block;
+              width: 60%;
+              /* height: 50%; */
+              left: 58%;
+              top: 20%;
+              max-width: 100px;
           }
-          .product-image img {
-            max-width: 180px;
+          .text_check{
+            font-size:20px;
           }
-          .bg {
-            /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat; */
-            background-size: cover;
-            /* opacity: 0.5; */
+        }
+        @media(max-width: 575px){
+          .text_check{
+            text-align: center;
           }
-          @media (max-width: 992px) {
-            .title p {
-                font-size: 1rem;
-            }
-            .product-card {
-                overflow: hidden;
-                margin-bottom: 0px;
-            }
-            .product-details {
-                width: 60%;
-                z-index: 1;
-                padding-top:70px;
-            }
-          
-            .product-image {
-                display:block;
-                width: 60%;
-                /* height: 50%; */
-                left: 58%;
-                top: 20%;
-                max-width: 100px;
-            }
-            .text_check{
-              font-size:20px;
-            }
+        }
+        @media (max-width: 365px) {
+          /* .toggle-btn {
+              margin:40px 5px 10px 5px;
+          } */
+          .product-details {
+              width: 80%;
+              position: relative;
+              color: #333;
+              background-color: rgba(255, 255, 255, 0.7);
           }
-          @media(max-width: 575px){
-            .text_check{
-              text-align: center;
-            }
+          .product-image{
+              display:none;
           }
-          @media (max-width: 365px) {
-            /* .toggle-btn {
-                margin:40px 5px 10px 5px;
-            } */
-            .product-details {
-                width: 80%;
-                position: relative;
-                color: #333;
-                background-color: rgba(255, 255, 255, 0.7);
-            }
-            .product-image{
-                display:none;
-            }
-          }
-  
-        </style>
-      <script>
-        var from = document.querySelector(".from").style;
-        var to = document.querySelector(".to").style;
-        var Succ = document.querySelector(".Succ").style;
-        Succ.background = "#333";
+        }
+
+      </style>
+    <script>
+      var from = document.querySelector(".from").style;
+      var to = document.querySelector(".to").style;
+      var Succ = document.querySelector(".Succ").style;
+      Succ.background = "#333";
+      to.background = "rgba(204, 204, 204, 0.767)";
+      from.background = "rgba(204, 204, 204, 0.767)";
+      Succ.color = "white";
+      to.color = "#333";
+      from.color = "#333";
+      $('.from').click(function() {
+        $('.from_block').removeClass('hidden')
+        $('.to_block').addClass('hidden')
+        $('.succ_block').addClass('hidden')
+        from.background = "#333";
         to.background = "rgba(204, 204, 204, 0.767)";
-        from.background = "rgba(204, 204, 204, 0.767)";
-        Succ.color = "white";
+        Succ.background = "rgba(204, 204, 204, 0.767)";
+        from.color = "white";
         to.color = "#333";
+        Succ.color = "#333";
+      })
+      $('.to').click(function() {
+        $('.to_block').removeClass('hidden')
+        $('.succ_block').addClass('hidden')
+        $('.from_block').addClass('hidden')
+        to.background = "#333";
+        from.background = "rgba(204, 204, 204, 0.767)";
+        Succ.background = "rgba(204, 204, 204, 0.767)";
+        to.color = "white";
         from.color = "#333";
-        $('.from').click(function() {
-          $('.from_block').removeClass('hidden')
-          $('.to_block').addClass('hidden')
-          $('.succ_block').addClass('hidden')
-          from.background = "#333";
-          to.background = "rgba(204, 204, 204, 0.767)";
-          Succ.background = "rgba(204, 204, 204, 0.767)";
-          from.color = "white";
-          to.color = "#333";
-          Succ.color = "#333";
-        })
-        $('.to').click(function() {
-          $('.to_block').removeClass('hidden')
-          $('.succ_block').addClass('hidden')
-          $('.from_block').addClass('hidden')
-          to.background = "#333";
-          from.background = "rgba(204, 204, 204, 0.767)";
-          Succ.background = "rgba(204, 204, 204, 0.767)";
-          to.color = "white";
-          from.color = "#333";
-          Succ.color = "#333";
-        })
-        $('.Succ').click(function() {
-          $('.succ_block').removeClass('hidden')
-          $('.from_block').addClass('hidden')
-          $('.to_block').addClass('hidden')
-          Succ.background = "#333";
-          from.background = "rgba(204, 204, 204, 0.767)";
-          to.background = "rgba(204, 204, 204, 0.767)";
-          Succ.color = "white";
-          from.color = "#333";
-          to.color = "#333";
-        })
-      </script> 
+        Succ.color = "#333";
+      })
+      $('.Succ').click(function() {
+        $('.succ_block').removeClass('hidden')
+        $('.from_block').addClass('hidden')
+        $('.to_block').addClass('hidden')
+        Succ.background = "#333";
+        from.background = "rgba(204, 204, 204, 0.767)";
+        to.background = "rgba(204, 204, 204, 0.767)";
+        Succ.color = "white";
+        from.color = "#333";
+        to.color = "#333";
+      })
+    </script> 
 </main>
 <script src="assets/js/progress.js"></script>
 {% include footer.html %}
