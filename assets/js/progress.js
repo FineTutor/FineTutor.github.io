@@ -122,7 +122,7 @@ window.setTimeout(function() {
             recieved.innerHTML = `
             <div class = "col-sm-12 col-lg-4">
                 <div class="product-card">
-                    <div class="product-details">
+                    <div class="product-details" style="color: white;">
                       <h2>`+doc.data().LastName+` 同學</h2>
                         <p style="text-align:left">科目：`+doc.data().SubjectsString+`</p>
                         <p style="text-align:left">地點：`+doc.data().Location[0] + ` ` + doc.data().Location[1] +`</p>
@@ -165,7 +165,7 @@ window.setTimeout(function() {
             recieved.innerHTML = `
             <div class = "col-sm-12 col-lg-4">
                 <div class="product-card">
-                    <div class="product-details">
+                    <div class="product-details" style="color: white;">
                       <h2>`+doc.data().LastName+` 老師</h2>
                         <p style="text-align:left">教授科目：`+doc.data().SubjectsString+`</p>
                         <p style="text-align:left">地點：`+doc.data().Location[0] + ` ` + doc.data().Location[1] +`</p>
@@ -208,7 +208,7 @@ window.setTimeout(function() {
         recieved.innerHTML += `
         <div class = "col-sm-12 col-lg-4">
             <div class="product-card">
-                <div class="product-details">
+                <div class="product-details" style="color: white;">
                   <h3>還沒有收到試教邀請哦，趕快送出邀請吧！</h3>
                 </div>
                 <div class="product-image">
