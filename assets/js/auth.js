@@ -96,7 +96,7 @@ signupForm.addEventListener('submit', (e) =>{
         // M.Modal.getInstance(modal).close();
         signupForm.reset();
         signupForm.querySelector('.error').innerHTML = '';
-        character ? location.replace("/teacher.html") : location.replace("/student.html")
+        character ? location.replace("/resumeedit.html") : location.replace("/studentinfoedit.html")
     }).catch(err => {
         signupForm.querySelector('.error').innerHTML = err.message;
     });
