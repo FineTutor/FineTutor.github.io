@@ -209,7 +209,7 @@ window.setTimeout(function() {
         <div class = "col-sm-12 col-lg-4">
             <div class="product-card">
                 <div class="product-details">
-                  <h2>還沒有收到試教邀請哦，趕快送出邀請吧！</h2>
+                  <h3>還沒有收到試教邀請哦，趕快送出邀請吧！</h3>
                 </div>
                 <div class="product-image">
                     <img src="/assets/img/`+ decharacter + `.png">
