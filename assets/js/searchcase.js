@@ -57,18 +57,11 @@ SearchForm.addEventListener('submit', (e) =>{
                                         ` + doc.data().LastName + ` 同學
                                     </h4>
                                     <div class="row">
-                                        <div class="col-6 col-sm-3"><p>上課地點：</p></div>
-                                        <div class="col-8 col-sm-3"><p>學習科目：</p></div>
-                                        <div class="col-4 col-sm-3"><p>接受薪資：</p></div>
-                                        <div class="col-4 col-sm-3">    
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6 col-sm-3"><p> ` + doc.data().Location[0] + ` ` + doc.data().Location[1] + ` </p></div>
-                                        <div class="col-8 col-sm-3"><p>` + doc.data().SubjectsString + `</p></div>
-                                        <div class="col-4 col-sm-3"><p>接受薪資：` + doc.data().Salary + `/hr</p></div>
+                                        <div class="col-6 col-sm-3"><p>上課地點：<br>` + doc.data().Location[0] + ` ` + doc.data().Location[1] + ` </p></div>
+                                        <div class="col-8 col-sm-3"><p>學習科目：<br>` + doc.data().SubjectsString + `</p></div>
+                                        <div class="col-4 col-sm-3"><p>接受薪資：<br>` + doc.data().Salary + `/hr</p></div>
                                         <div class="col-4 col-sm-3">
-                                            <button type="button" class="btn btn-dark CaseBtn" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button> 
+                                            <br><button type="button" class="btn btn-dark CaseBtn" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button> 
                                         </div>
                                     </div>
                                 </div>
@@ -136,18 +129,11 @@ SearchForm.addEventListener('submit', (e) =>{
                                             ` + doc.data().LastName + ` 老師
                                         </h4>
                                         <div class="row">
-                                            <div class="col-6 col-sm-3"><p>授課地點：</p></div>
-                                            <div class="col-8 col-sm-3"><p>教授科目：</p></div>
-                                            <div class="col-4 col-sm-3"><p>接受薪資：</p></div>
+                                            <div class="col-6 col-sm-3"><p>授課地點：<br>` + doc.data().Location[0] + ` ` + doc.data().Location[1] + ` </p></div>
+                                            <div class="col-8 col-sm-3"><p>教授科目：<br>` + doc.data().SubjectsString + `</p></div>
+                                            <div class="col-4 col-sm-3"><p>接受薪資：<br>` + doc.data().Salary + `/hr</p></div>
                                             <div class="col-4 col-sm-3">    
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6 col-sm-3"><p> ` + doc.data().Location[0] + ` ` + doc.data().Location[1] + ` </p></div>
-                                            <div class="col-8 col-sm-3"><p>` + doc.data().SubjectsString + `</p></div>
-                                            <div class="col-4 col-sm-3"><p>` + doc.data().Salary + `/hr</p></div>
-                                            <div class="col-4 col-sm-3">    
-                                                <button type="button" class="btn btn-dark CaseBtn" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button> 
+                                                <br><button type="button" class="btn btn-dark CaseBtn" data-toggle="modal" data-target="#modal` + doc.id + `">查看更多</button> 
                                             </div>
                                         </div>
                                     </div>
