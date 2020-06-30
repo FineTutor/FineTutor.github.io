@@ -300,12 +300,12 @@ body{
       .page-footer h5{
         margin: 1.3rem 0.82rem 0.656rem 0;
       }
-      .page-footer .row .col{
+      /* .page-footer .row .col{
         padding: 0 1.5rem;
-      }
+      } */
       .page-footer .row .col a {
         letter-spacing: 0.1rem;
-        padding-top:0.2rem;
+        /* padding-top:0.2rem; */
       }
      
       @media(max-width:992px){

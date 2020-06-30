@@ -61,6 +61,12 @@ nav {
         margin-right:35%;
     }
 }
+@media(max-width:600px){
+    .card_pos{
+        margin-left: 5%;
+        margin-right:55%;
+    }
+}
 
 .up-card {
     height:620px !important;
