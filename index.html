@@ -146,13 +146,15 @@ description: FineTutor家教網
 window.setTimeout(function() {
   var user = firebase.auth().currentUser;
   if (user) {
-    if (user.character == 'teacher') {
-      location.replace("/teacher.html");
-    } else {
-      location.replace("/student.html");
-    }
+    db.collection('users').doc(user.uid).get().then(doc => {
+      if (doc.data().character == 'teacher') {
+        location.replace("/teacher.html");
+      } else {
+        location.replace("/student.html");
+      }
+    })
   }
-}, 500);
+}, 800);
 </script>
 
 {% include footer.html %}
