@@ -381,9 +381,10 @@ body{
         height: 100%;
         padding: 50px 0;
       }
-      .product-details h2 {
-        color: #333;
+      .product-details h3 {
+        color: white;
         margin-bottom: 35px;
+        font-style:normal;
       }
       .product-details button {
         width: 150px;
